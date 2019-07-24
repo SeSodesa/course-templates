@@ -107,10 +107,10 @@ Workflow for editing RST files
   To edit the files in the course directory, like the RST files, you will need
   a software called *text editor*. This is an application which shows
   the contents of the files as text with monospaced font (all characters have
-  equal height and width). In the picture above is the Atom text editor
+  equal height and width). In the picture above, you see the Atom text editor
   showing file ``m01_introduction/01_rst.rst`` of this course. As you
   can see, it is nice, because it shows line numbers and colors different
-  parts of the RST code. This is called `syntax highlighting`.
+  structures of the RST code. This is called `syntax highlighting`.
 
   For GNU/Linux environment, some simple editors are
   `Kate <https://kate-editor.org/>`_, Mousepad included in the
@@ -123,15 +123,15 @@ Workflow for editing RST files
   in the picture above. Two classic editors with lots of features for
   programmers are `Emacs <https://en.wikipedia.org/wiki/Emacs>`_ and
   `Vim <https://en.wikipedia.org/wiki/Vim_(text_editor)>`_, but those
-  also have high learning curve.
+  also have a high learning curve.
 
   Do **not** use word processors such as Microsoft Word or LibreOffice
   Writer. Their formatting commands are useless when one must edit pure
   text files.
 
   It is good to learn how to use your text editor: commenting multiple
-  lines, changing indentation of multiple lines, show line numbers,
-  search and replace.
+  lines, changing indentation of multiple lines, showing line numbers,
+  searching and replacing text.
 
 
 The usual workflow for editing a course is the following:
@@ -166,35 +166,10 @@ to this image:
 .. image:: /images/rst-sample.png
 
 
-A+ RST tools
-------------
-There are Sphinx extensions made for writing course material on A+. The
-name of this extension collection is *A+ RST tools*.
-
-
-
-
-Bootstrap-styled-topic
-......................
-
-The ``styled-topic`` feature seen above generates a description list wrapped in
-a ``div``-element with additional styling.
-
-* Implementation: ``extensions/bootstrap_styled_topic.py``
-* Styles: ``_static/course.css``
-
-
-Adding custom RST directives
-............................
-
-Custom RST directives can be added into the ``extensions`` directory.
-The name of the implementing Python module should also be added to the ``extensions`` list in the Sphinx configuration file ``conf.py``.
-See for example ``bootstrap_styled_topic`` and ``div``.
-
 Admonition with embedded MathJax-syntax
 .......................................
 
-Builtin ``admonition`` directive is useful for defining new concepts:
+The Sphinx-builtin ``admonition`` directive is useful for defining new concepts:
 
 .. admonition:: Algorithm
   :class: meta
@@ -215,13 +190,109 @@ This template extends the default A+ theme found in ``a-plus-rst-tools/theme/apl
 
 .. _MathJax: https://docs.mathjax.org/en/v2.7-latest/
 
+
+
+A+ RST tools
+------------
+
+There are Sphinx extensions made for writing course material on A+. The
+name of this extension collection is *A+ RST tools*. The latest documentation
+is at `the Github repository of A+ RST tools <https://github.com/Aalto-LeTech/a-plus-rst-tools>`_.
+However, this manual shows many examples.
+
+Chapter 1.7 discusses `Graded questionnaires <07_questionnaires>`_.
+
+**Feedback questionnaire**: see the A+ RST tools documentation.
+
+**Submittable exercise**: see chapter `Programming exercises <../m02_programming_exercises/01_instructions>`_.
+
+**External service**: see the `LTI chapter <../m05_lti/introduction.rst>`_.
+
+**Active elements**: see the `Active elements chapter <../m09_active_elements/introduction.rst>`_.
+
+Hidden block
+............
+
+Directive for creating hidden content blocks. The content can be shown/hidden
+by clicking the link. (This uses the Bootstrap collapse component.)
+
+::
+
+  .. hidden-block:: name (required)
+    :label: Optional text for the show/hide link (default Show/Hide)
+    :visible: # if this flag is present, the collapsible div starts out visible
+
+    Hidden content here.
+
+\
+
+.. hidden-block:: hidden-block-example
+  :label: Hidden block example
+
+  Peek-a-boo! You revealed the hidden content!
+
+
+More directives just mentioned here
+...................................
+
+
+**Point of interest**: see the A+ RST tools documentation.
+
+**Annotated code blocks**: see the A+ RST tools documentation.
+
+**Code blocks with line reference**: see the `A+ RST tools documentation.
+<https://github.com/Aalto-LeTech/a-plus-rst-tools#11-code-blocks-with-line-references>`_.
+
+**REPL sessions**: see the A+ RST tools documentation.
+
+
+Media directives
+................
+
+The media directives were developed basically for a single course and they may
+not be quite reusable for other usecases, but they are listed here anyway. This
+extension must be activated separately in the project conf.py:
+``(extensions = ["aplus_setup", "media"])``.
+
+YouTube video https://www.youtube.com/watch?v=HnQMDkUFzh4 embedded:
+
+.. youtube:: HnQMDkUFzh4
+  :video-height: 400
+  :video-width: 640
+
+See more at the `A+ RST tools documentation <https://github.com/Aalto-LeTech/a-plus-rst-tools#13-media-directives>`_.
+
+Adding custom RST directives
+----------------------------
+
+Custom RST directives can be added into the ``extensions`` directory.
+The name of the implementing Python module should also be added to the ``extensions`` list in the Sphinx configuration file ``conf.py``.
+See for example ``bootstrap_styled_topic`` and ``div``.
+
+Bootstrap-styled-topic
+......................
+
+The ``styled-topic`` feature seen above generates a description list wrapped in
+a ``div``-element with additional styling.
+
+* Implementation: ``extensions/bootstrap_styled_topic.py``
+* Styles: ``_static/course.css``
+
+
+
+
+
+
+
+
+
 Tips
-....
+----
 
 When you are only writing learning material as RST which contains text, links
 and MathJax notation, you don't need to run the "docker-compile - docker-up"
 cycle for each modification. This is only required if you add new RST files or
-exercises. One can just start A+ and mooc-grader with ``docker-up.sh". After
+exercises. One can just start A+ and mooc-grader with ``docker-up.sh``. After
 that, one can just edit an RST file, run ``docker-compile.sh`` and the update
 the course page in the web browser. This cycle can be repeated without shutting
 down docker-up.sh.
@@ -233,13 +304,13 @@ of the RST material. The compiled material is in the subdirectory
 For example, print your working directory in the terminal with the ``pwd``
 command:
 
-.. code-block: none
+.. code-block:: none
 
     atilante@t31300-lr124 ~/ohj/a-ole/aplus-manual
      % pwd
     /u/79/atilante/unix/ohj/a-ole/aplus-manual
 
-In this example the absolute path of the working directory is
+In this example, the absolute path of the working directory is
 ``/u/79/atilante/unix/ohj/a-ole/aplus-manual``. Copy-paste your result to
 the address bar of your web browser, add ``_build/html/index.html`` to the end
 and press Enter.
@@ -248,3 +319,7 @@ and press Enter.
 
 Notice that images and exercises do not show when viewing this static HTML
 material in the browser.
+
+
+External media
+--------------
