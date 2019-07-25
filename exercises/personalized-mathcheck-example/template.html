@@ -1,0 +1,25 @@
+{% extends 'access/exercise_frame.html' %}
+
+{% block exercise %}
+<h1>Personalized MathCheck example</h1>
+
+  <p>
+    The numerical values in this exercise are randomized.
+  </p>
+
+  <p>
+    Calculate the value of  `{{generated_files.A.content}}/d^{{generated_files.B.content}}+{{generated_files.C.content}}`,
+    when `d=3`.
+    Give the answer as an integer or a rational number `a/b`,
+    where `a` and `b` are integers.
+  </p>
+
+<!--
+  <p>Your input: {{ generated_files.number.content  }}</p>
+  <p>Download generated file: <a href="{{ generated_files.number.url }}">link</a></p>
+
+  <p><small>This exercise description is defined in a separate template file.</small></p>
+-->
+  {% include 'access/accept_post_form.html' %}
+
+{% endblock %}
