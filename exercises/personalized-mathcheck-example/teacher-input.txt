@@ -1,0 +1,5 @@
+#hidden /* Tehtävä 3 */
+arithmetic
+f_nodes 3
+10/3^8 + -1#initial =# #%
+#submit

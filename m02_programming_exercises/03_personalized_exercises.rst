@@ -48,6 +48,9 @@ programs that create random instances.
 .. submit:: personalized_python 10
   :config: exercises/personalized_python/config.yaml
 
+.. submit:: personalized-mathcheck-example 10
+  :config: exercises/personalized-mathcheck-example/config.yaml
+
 
 Detailed description of the "Personalized number" exercise
 ----------------------------------------------------------
