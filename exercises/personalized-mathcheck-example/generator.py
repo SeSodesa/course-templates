@@ -16,12 +16,9 @@ def teacher_input(random_numbers):
   """
 
   return \
-    u"#hidden /* Tehtävä 3 */\n" + \
     u"arithmetic\n" + \
     u"f_nodes 3\n" + \
-    u"{}/3^{} + {}".format(random_numbers[0],random_numbers[1],random_numbers[2],) + \
-    u"#initial =# #%\n" + \
-    u"#submit\n"
+    u"{}/3^({}) + {}\n".format(random_numbers[0],random_numbers[1],random_numbers[2],)
 
 
 def instructions(random_numbers):

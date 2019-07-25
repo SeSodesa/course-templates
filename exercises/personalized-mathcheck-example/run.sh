@@ -23,7 +23,10 @@ export PYTHONPATH=/submission/user
 # Yhdistetään opettajan tehtäväkonfiguraatio ja
 # opiskelijan vastaus yhteen tiedostoon
 # mc_input
-cat /exercise/teacher-input.txt ratkaisu > mc_input
+
+cp /personalized_exercise/teacher-input.txt teacher-input.txt
+
+cat teacher-input.txt ratkaisu > mc_input
 # Tässä "ratkaisu" on tehtävälomakkeen nimi verkkosivulla,
 # ja se on määritelty tehtävän config.yaml-tiedostossa
 # fields-listan alla.
