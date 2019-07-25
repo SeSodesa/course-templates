@@ -3,6 +3,17 @@ title: Personalized MathCheck-example
 max_points: 2
 instructions: |
 
+  <p>
+    The numerical values in this exercise are randomized.
+  </p>
+
+  <p>
+    Calculate the value of  `A/d^B+C`,
+    when `d=3`.
+    Give the answer as an integer or a rational number `a/b`,
+    where `a` and `b` are integers.
+  </p>
+
 # acceptPost tuottaa tekstikentän sivulle
 # tiedoston palautuslomakkeen sijaan
 view_type: access.types.stdasync.acceptPost
