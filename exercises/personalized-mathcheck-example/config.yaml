@@ -12,6 +12,7 @@ instructions: |
     when `d=3`.
     Give the answer as an integer or a rational number `a/b`,
     where `a` and `b` are integers.
+    The values of the constants `A`, `B` and `C` are listed below.
   </p>
 
 # acceptPost tuottaa tekstikentän sivulle
